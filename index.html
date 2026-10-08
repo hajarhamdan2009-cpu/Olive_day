@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🫒 موسم الزيتون الأردني | هاجر وساره حمدان</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --olive-950:#0a1205;--olive-900:#131c0a;--olive-800:#1d2b10;--olive-700:#2c3f18;
+  --olive-500:#55702d;--olive-300:#8ba358;
+  --gold-900:#664708;--gold-700:#9e6e0d;--gold-500:#cfa21b;--gold-400:#deb83e;
+  --gold-300:#f0d165;--gold-200:#f7e594;--gold-100:#fdf6d5;
+  --bg-primary:var(--olive-950);--bg-secondary:var(--olive-900);
+  --bg-card:rgba(29,43,16,0.65);--text-primary:#fcfaf2;
+  --text-secondary:rgba(252,250,242,0.8);--text-muted:rgba(252,250,242,0.55);
+  --accent:var(--gold-400);--accent-glow:rgba(222,184,62,0.3);
+  --olive-glow:rgba(139,163,88,0.25);--border-color:rgba(222,184,62,0.2);
+  --border-hover:rgba(222,184,62,0.55);
+  --ease-smooth:cubic-bezier(0.25,0.46,0.45,0.94);--ease-bounce:cubic-bezier(0.68,-0.55,0.265,1.55);
+  --focus-ring:0 0 0 3px var(--gold-400), 0 0 0 6px rgba(222,184,62,0.3);
+}
+[data-theme="light"]{
+  --bg-primary:#f7f5eb;--bg-secondary:#eee9d5;--bg-card:rgba(255,255,255,0.92);
+  --text-primary:#16210e;--text-secondary:rgba(22,33,14,0.8);--text-muted:rgba(22,33,14,0.55);
+  --accent:var(--gold-700);--accent-glow:rgba(158,110,13,0.18);
+  --olive-glow:rgba(85,112,45,0.15);--border-color:rgba(102,71,8,0.18);
+  --border-hover:rgba(102,71,8,0.45);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+/* تحسينات إمكانية الوصول */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:0.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:0.01ms!important;
+    scroll-behavior:auto!important;
+  }
+  .hero-bg{animation:none!important}
+  .particle{display:none!important}
+}
+:focus-visible{
+  outline:none;
+  box-shadow:var(--focus-ring);
+  border-radius:8px;
+}
+a:focus-visible,button:focus-visible{
+  outline:none;
+  box-shadow:var(--focus-ring);
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:'Cairo','Tajawal',sans-serif;
+  background:var(--bg-primary);color:var(--text-primary);line-height:1.9;
+  overflow-x:hidden;transition:background 0.4s ease,color 0.4s ease;
+}
+h1,h2,h3,h4,nav a{font-family:'Amiri','Cairo',serif;font-weight:700;line-height:1.35}
+
+/* المؤشر الفاخر */
+@media (hover:hover) and (pointer:fine){*{cursor:none!important}}
+.cursor-core{
+  position:fixed;top:0;left:0;width:16px;height:16px;
+  background:radial-gradient(circle,#fff 0%,var(--gold-300) 40%,var(--gold-500) 100%);
+  border-radius:50%;pointer-events:none;z-index:100000;
+  box-shadow:0 0 12px var(--gold-400),0 0 25px var(--gold-400);
+  transform:translate(-50%,-50%);
+  transition:width 0.25s var(--ease-bounce),height 0.25s var(--ease-bounce);will-change:transform;
+}
+.cursor-core.hovering{width:32px;height:32px}
+.cursor-core.clicking{width:10px;height:10px;background:#fff}
+@media (hover:none),(pointer:coarse){.cursor-core{display:none!important}*{cursor:auto!important}}
+
+/* Preloader */
+#preloader{
+  position:fixed;inset:0;background:var(--olive-950);z-index:999999;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;
+  transition:opacity 0.5s ease,visibility 0.5s;
+}
+#preloader.hidden{opacity:0;visibility:hidden}
+.preloader-olive{font-size:4rem;animation:oliveSpin 1.8s var(--ease-smooth) infinite;filter:drop-shadow(0 0 25px var(--gold-500))}
+@keyframes oliveSpin{0%{transform:rotate(0deg) scale(1)}50%{transform:rotate(180deg) scale(1.15)}100%{transform:rotate(360deg) scale(1)}}
+.preloader-title{margin-top:20px;font-size:1.6rem;color:var(--gold-300);font-weight:900;letter-spacing:1px;text-align:center;font-family:'Amiri',serif}
+.preloader-students{margin-top:12px;font-size:1.05rem;color:var(--gold-400);text-align:center;line-height:1.7;max-width:440px}
+.preloader-students strong{color:var(--gold-200)}
+.preloader-supervisor{margin-top:8px;font-size:0.95rem;color:var(--gold-300);text-align:center;line-height:1.7;max-width:440px}
+.preloader-supervisor strong{color:var(--gold-200)}
+.preloader-bar{width:260px;height:3px;background:rgba(222,184,62,0.15);border-radius:10px;margin-top:25px;overflow:hidden}
+.preloader-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold-700),var(--gold-300),var(--gold-700));width:0;animation:loadBar 1.3s ease forwards}
+@keyframes loadBar{to{width:100%}}
+
+/* Progress */
+.scroll-progress{position:fixed;top:0;right:0;height:3px;background:linear-gradient(90deg,var(--olive-300),var(--gold-300),var(--gold-400));z-index:9999;width:0;transition:width 0.1s linear}
+
+/* Controls */
+.top-controls{position:fixed;top:20px;left:20px;display:flex;gap:10px;z-index:1001}
+.control-btn{background:var(--bg-card);border:1.5px solid var(--border-color);color:var(--text-primary);width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;backdrop-filter:blur(10px);transition:all 0.3s;box-shadow:0 4px 15px rgba(0,0,0,0.2)}
+.control-btn:hover{border-color:var(--border-hover);color:var(--gold-300);transform:translateY(-2px)}
+
+/* Skip */
+.skip-link{position:fixed;top:-100px;right:20px;padding:12px 24px;background:var(--accent);color:var(--olive-950);text-decoration:none;border-radius:0 0 12px 12px;font-weight:700;z-index:999999;transition:top 0.3s}
+.skip-link:focus{top:0}
+
+/* Nav */
+nav{position:fixed;top:0;right:0;left:0;padding:0 5%;z-index:1000;transition:all 0.35s;background:transparent}
+nav.scrolled{background:var(--bg-card);backdrop-filter:blur(14px);box-shadow:0 4px 25px rgba(0,0,0,0.3);border-bottom:1px solid var(--border-color)}
+.nav-container{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:78px}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--text-primary)}
+.logo-mark{width:46px;height:46px;background:linear-gradient(135deg,var(--gold-400),var(--gold-700));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;box-shadow:0 4px 15px var(--accent-glow)}
+.logo-text{display:flex;flex-direction:column;line-height:1.15}
+.logo-main{font-size:1.15rem;font-weight:900;font-family:'Amiri',serif}
+.logo-sub{font-size:.72rem;color:var(--gold-400);letter-spacing:1px}
+.nav-links{display:flex;gap:6px;list-style:none}
+.nav-links a{color:var(--text-secondary);text-decoration:none;padding:8px 16px;border-radius:22px;font-size:.95rem;transition:all 0.25s;font-weight:600}
+.nav-links a:hover{color:var(--gold-300);background:var(--accent-glow)}
+[data-theme="light"] .nav-links a:hover{color:var(--gold-700)}
+.burger{display:none;flex-direction:column;gap:6px;background:none;border:none;padding:8px}
+.burger span{width:28px;height:2.5px;background:var(--text-primary);border-radius:2px}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--bg-primary);padding:120px 5% 70px}
+.hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=1600&q=80');background-size:cover;background-position:center;animation:heroZoom 26s ease-in-out infinite alternate}
+@keyframes heroZoom{0%{transform:scale(1)}100%{transform:scale(1.08)}}
+.hero-overlay{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 0%,rgba(10,18,5,0.75) 68%,var(--bg-primary) 100%),linear-gradient(135deg,rgba(10,18,5,0.88),rgba(44,63,24,0.72),rgba(10,18,5,0.92))}
+[data-theme="light"] .hero-overlay{background:radial-gradient(ellipse at center,transparent 0%,rgba(247,245,235,0.5) 68%,var(--bg-primary) 100%),linear-gradient(135deg,rgba(247,245,235,0.75),rgba(238,233,213,0.65),rgba(247,245,235,0.88))}
+.hero-particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.particle{position:absolute;width:4px;height:4px;background:var(--gold-400);border-radius:50%;opacity:.5;box-shadow:0 0 10px var(--gold-400);animation:floatUp linear infinite}
+@keyframes floatUp{from{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:.7}90%{opacity:.7}to{transform:translateY(-100px) scale(1);opacity:0}}
+.hero-content{position:relative;z-index:3;text-align:center;max-width:980px;width:100%;display:flex;flex-direction:column;align-items:center;gap:22px}
+
+.students-card{display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 34px;background:rgba(222,184,62,0.12);border:1.5px solid var(--border-hover);border-radius:22px;backdrop-filter:blur(12px);animation:fadeSlideDown 0.9s ease 0.15s both;max-width:100%;box-shadow:0 10px 30px rgba(0,0,0,0.2)}
+.students-card .students-label{font-size:.78rem;color:var(--gold-400);letter-spacing:3px;font-weight:700}
+[data-theme="light"] .students-card .students-label{color:var(--gold-700)}
+.students-card .students-names{font-size:1.2rem;font-weight:900;color:var(--gold-200);font-family:'Amiri',serif}
+[data-theme="light"] .students-card .students-names{color:var(--gold-700)}
+.students-card .supervisor-line{font-size:0.82rem;color:var(--gold-300);font-weight:600;margin-top:4px}
+.students-card .supervisor-line strong{color:var(--gold-200)}
+[data-theme="light"] .students-card .supervisor-line{color:var(--gold-700)}
+[data-theme="light"] .students-card .supervisor-line strong{color:var(--gold-900)}
+
+.hero-eyebrow{display:flex;align-items:center;gap:10px;padding:9px 24px;background:var(--accent-glow);border:1px solid var(--border-hover);border-radius:50px;color:var(--gold-300);font-weight:700;font-size:.9rem;letter-spacing:1px;backdrop-filter:blur(8px);animation:fadeSlideDown 0.9s ease 0.3s both;width:fit-content}
+[data-theme="light"] .hero-eyebrow{color:var(--gold-700)}
+.hero-eyebrow::before{content:'';width:8px;height:8px;background:var(--gold-400);border-radius:50%;box-shadow:0 0 12px var(--gold-400);animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.6}}
+
+.hero h1{font-size:clamp(2.2rem,5.5vw,4.6rem);font-weight:900;line-height:1.2;color:var(--text-primary);text-shadow:0 4px 30px rgba(0,0,0,0.5);animation:fadeSlideUp 1s ease 0.45s both;font-family:'Amiri',serif}
+.hero h1 .gradient-text{background:linear-gradient(135deg,var(--gold-200),var(--gold-400),var(--gold-700),var(--gold-300));background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientShift 5s ease infinite;display:inline-block}
+@keyframes gradientShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+.hero-subtitle{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--text-secondary);max-width:760px;animation:fadeSlideUp 1s ease 0.6s both}
+
+.hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeSlideUp 1s ease 0.75s both}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:16px 36px;border-radius:60px;font-weight:700;font-size:1.02rem;text-decoration:none;transition:all 0.3s var(--ease-smooth);position:relative;overflow:hidden;border:none;font-family:inherit}
+.btn-primary{background:linear-gradient(135deg,var(--gold-500),var(--gold-700));color:var(--olive-950);box-shadow:0 12px 35px var(--accent-glow)}
+.btn-primary:hover{transform:translateY(-4px);box-shadow:0 20px 50px var(--accent-glow)}
+.btn-ghost{background:var(--bg-card);color:var(--text-primary);border:1.5px solid var(--border-color);backdrop-filter:blur(8px)}
+.btn-ghost:hover{border-color:var(--border-hover);color:var(--gold-300);transform:translateY(-4px)}
+[data-theme="light"] .btn-ghost:hover{color:var(--gold-700)}
+
+@keyframes fadeSlideUp{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeSlideDown{from{opacity:0;transform:translateY(-25px)}to{opacity:1;transform:translateY(0)}}
+
+/* Stats */
+.stats-strip{background:var(--bg-secondary);padding:50px 5%;border-top:1px solid var(--border-color);border-bottom:1px solid var(--border-color);position:relative;overflow:hidden}
+.stats-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,var(--accent-glow),transparent 65%);pointer-events:none}
+.stats-container{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;position:relative;z-index:2}
+.stat-item{text-align:center;padding:15px;position:relative}
+.stat-item:not(:last-child)::after{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);height:60%;width:1px;background:linear-gradient(to bottom,transparent,var(--border-hover),transparent)}
+.stat-number{font-size:clamp(2.2rem,3.8vw,3.4rem);font-weight:900;background:linear-gradient(135deg,var(--gold-200),var(--gold-400));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;display:block;margin-bottom:8px;font-family:'Amiri',serif}
+.stat-label{font-size:.9rem;color:var(--text-secondary)}
+
+/* Sections */
+section{padding:110px 5%;position:relative;scroll-margin-top:78px}
+.container{max-width:1300px;margin:0 auto;position:relative;z-index:2}
+.section-header{text-align:center;margin-bottom:70px;max-width:840px;margin-left:auto;margin-right:auto}
+.section-eyebrow{display:inline-flex;align-items:center;gap:14px;color:var(--gold-400);font-weight:700;font-size:.88rem;letter-spacing:3px;margin-bottom:18px}
+[data-theme="light"] .section-eyebrow{color:var(--gold-700)}
+.section-eyebrow::before,.section-eyebrow::after{content:'';width:40px;height:1px;background:linear-gradient(90deg,transparent,currentColor)}
+.section-eyebrow::after{background:linear-gradient(90deg,currentColor,transparent)}
+.section-title{font-size:clamp(2rem,4.2vw,3.3rem);font-weight:900;color:var(--text-primary);line-height:1.25;margin-bottom:18px;font-family:'Amiri',serif}
+.section-title .accent{background:linear-gradient(135deg,var(--gold-200),var(--gold-400));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.section-desc{color:var(--text-secondary);font-size:1.05rem;line-height:1.9}
+
+/* Videos Section */
+#videos{background:var(--bg-primary);position:relative}
+#videos::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 15% 20%,var(--accent-glow),transparent 45%),radial-gradient(circle at 85% 80%,var(--olive-glow),transparent 45%);pointer-events:none}
+.videos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:35px}
+.video-card{background:var(--bg-card);border:1.5px solid var(--border-color);border-radius:24px;overflow:hidden;transition:all 0.4s var(--ease-smooth);backdrop-filter:blur(10px);box-shadow:0 15px 40px rgba(0,0,0,0.3)}
+.video-card:hover{transform:translateY(-10px);border-color:var(--border-hover);box-shadow:0 25px 60px rgba(0,0,0,0.45),0 0 50px var(--accent-glow)}
+.video-wrapper{position:relative;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden}
+.video-wrapper iframe,.video-wrapper video{width:100%;height:100%;object-fit:cover;border:none}
+.video-info{padding:28px 24px}
+.video-info h3{font-size:1.35rem;color:var(--gold-300);margin-bottom:12px;font-family:'Amiri',serif}
+[data-theme="light"] .video-info h3{color:var(--gold-700)}
+.video-info p{color:var(--text-secondary);font-size:.95rem;line-height:1.8}
+
+/* About */
+#about{background:var(--bg-secondary)}
+.about-layout{display:grid;grid-template-columns:1.2fr 0.8fr;gap:60px;align-items:center}
+.about-text h3{font-size:clamp(1.7rem,2.8vw,2.3rem);font-weight:900;color:var(--gold-300);margin-bottom:22px;font-family:'Amiri',serif}
+[data-theme="light"] .about-text h3{color:var(--gold-700)}
+.about-text p{color:var(--text-secondary);font-size:1.05rem;margin-bottom:18px;line-height:2}
+.about-text strong{color:var(--gold-200)}
+[data-theme="light"] .about-text strong{color:var(--gold-700)}
+.about-quote{margin-top:28px;padding:22px 26px;background:var(--accent-glow);border-right:4px solid var(--gold-500);border-radius:16px;font-size:1.1rem;font-weight:700;color:var(--gold-200);line-height:1.9;font-family:'Amiri',serif}
+[dir="ltr"] .about-quote{border-right:none;border-left:4px solid var(--gold-500)}
+[data-theme="light"] .about-quote{color:var(--gold-700)}
+.about-visual{display:flex;align-items:center;justify-content:center}
+.about-circle{position:relative;width:100%;max-width:390px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,var(--accent-glow),transparent 72%);border:2px solid var(--border-color);display:flex;align-items:center;justify-content:center;animation:rotateSlow 40s linear infinite}
+@keyframes rotateSlow{to{transform:rotate(360deg)}}
+.about-circle::before{content:'';position:absolute;inset:28px;border-radius:50%;border:1px dashed var(--border-hover);animation:rotateSlow 28s linear infinite reverse}
+.about-emoji{font-size:8.5rem;filter:drop-shadow(0 15px 35px var(--accent-glow));animation:rotateSlowReverse 40s linear infinite}
+@keyframes rotateSlowReverse{to{transform:rotate(-360deg)}}
+
+/* Traditions */
+#traditions{background:var(--bg-primary)}
+.traditions-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+.tradition-card{position:relative;background:var(--bg-card);border:1.5px solid var(--border-color);border-radius:24px;padding:40px 32px;transition:all 0.4s var(--ease-smooth);overflow:hidden;backdrop-filter:blur(8px)}
+.tradition-card::before{content:'';position:absolute;top:0;right:0;width:100%;height:100%;background:linear-gradient(135deg,transparent 40%,var(--accent-glow) 100%);opacity:0;transition:opacity 0.4s}
+.tradition-card:hover::before{opacity:1}
+.tradition-card:hover{transform:translateY(-10px);border-color:var(--border-hover);box-shadow:0 25px 60px rgba(0,0,0,0.4),0 0 50px var(--accent-glow)}
+.tradition-inner{position:relative;z-index:2}
+.tradition-icon{width:70px;height:70px;background:linear-gradient(135deg,var(--gold-500),var(--gold-700));border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:2rem;margin-bottom:24px;box-shadow:0 12px 35px var(--accent-glow);transition:transform 0.5s var(--ease-bounce)}
+.tradition-card:hover .tradition-icon{transform:rotate(-10deg) scale(1.15)}
+.tradition-card h3{font-size:1.4rem;font-weight:800;color:var(--text-primary);margin-bottom:14px;font-family:'Amiri',serif}
+.tradition-card p{color:var(--text-secondary);font-size:0.98rem;line-height:1.85}
+.tradition-card strong{color:var(--gold-300)}
+[data-theme="light"] .tradition-card strong{color:var(--gold-700)}
+
+/* Pressing */
+#pressing{background:var(--bg-secondary);position:relative;overflow:hidden}
+.press-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.press-visual-wrap{position:relative;display:flex;align-items:center;justify-content:center}
+.press-visual-circle{position:relative;width:100%;max-width:410px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,var(--accent-glow),transparent 72%);border:2px solid var(--border-color);display:flex;align-items:center;justify-content:center;animation:rotateSlow 38s linear infinite}
+.press-visual-circle::before{content:'';position:absolute;inset:30px;border-radius:50%;border:1px dashed var(--border-hover);animation:rotateSlow 26s linear infinite reverse}
+.press-emoji{font-size:8.5rem;filter:drop-shadow(0 15px 35px var(--accent-glow));animation:rotateSlowReverse 38s linear infinite}
+.press-badge{position:absolute;top:20px;right:20px;background:linear-gradient(135deg,var(--gold-500),var(--gold-700));color:var(--olive-950);padding:9px 20px;border-radius:30px;font-weight:800;font-size:.82rem;box-shadow:0 8px 25px var(--accent-glow);animation:badgeFloat 3s ease-in-out infinite}
+[dir="ltr"] .press-badge{right:auto;left:20px}
+@keyframes badgeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+.steps-list{list-style:none;counter-reset:step;display:flex;flex-direction:column;gap:18px}
+.steps-list li{counter-increment:step;position:relative;padding-right:56px;color:var(--text-secondary);font-size:1rem;line-height:1.85;padding-bottom:6px}
+[dir="ltr"] .steps-list li{padding-right:0;padding-left:56px}
+.steps-list li::before{content:counter(step);position:absolute;right:0;top:0;width:38px;height:38px;background:linear-gradient(135deg,var(--olive-500),var(--olive-700));border:1px solid var(--border-hover);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.92rem;color:var(--gold-300);transition:all 0.35s}
+[dir="ltr"] .steps-list li::before{right:auto;left:0}
+.steps-list li:hover::before{transform:scale(1.15) rotate(360deg);background:linear-gradient(135deg,var(--gold-500),var(--gold-700));color:var(--olive-950)}
+.steps-list strong{color:var(--gold-200)}
+[data-theme="light"] .steps-list strong{color:var(--gold-700)}
+.press-tip{margin-top:26px;padding:20px 22px;background:var(--accent-glow);border-right:3.5px solid var(--gold-500);border-radius:14px;font-size:.95rem;color:var(--text-secondary);line-height:1.85}
+[dir="ltr"] .press-tip{border-right:none;border-left:3.5px solid var(--gold-500)}
+.press-tip strong{color:var(--gold-300)}
+[data-theme="light"] .press-tip strong{color:var(--gold-700)}
+
+/* Activities */
+#activities{background:var(--bg-primary)}
+.activities-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px}
+.activity-card{background:var(--bg-card);border:1.5px solid var(--border-color);border-radius:24px;padding:40px 30px;text-align:center;transition:all 0.4s var(--ease-smooth);backdrop-filter:blur(8px)}
+.activity-card:hover{transform:translateY(-10px) scale(1.02);border-color:var(--border-hover);box-shadow:0 25px 70px rgba(0,0,0,0.5),0 0 50px var(--accent-glow)}
+.activity-icon{width:70px;height:70px;margin:0 auto 22px;background:var(--accent-glow);border:1px solid var(--border-hover);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;transition:all 0.5s var(--ease-bounce)}
+.activity-card:hover .activity-icon{transform:rotate(-10deg) scale(1.15);background:linear-gradient(135deg,var(--gold-500),var(--gold-700))}
+.activity-card h3{font-size:1.25rem;font-weight:800;color:var(--gold-300);margin-bottom:12px;font-family:'Amiri',serif}
+[data-theme="light"] .activity-card h3{color:var(--gold-700)}
+.activity-card p{color:var(--text-secondary);font-size:.95rem;line-height:1.8}
+
+/* Benefits */
+#benefits{background:var(--bg-secondary)}
+.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:28px}
+.benefit-card{position:relative;background:var(--bg-card);border:1.5px solid var(--border-color);border-radius:24px;padding:40px 32px;transition:all 0.4s var(--ease-smooth);overflow:hidden;backdrop-filter:blur(8px)}
+.benefit-card:hover{transform:translateY(-10px);border-color:var(--border-hover);box-shadow:0 25px 70px rgba(0,0,0,0.5),0 0 50px var(--accent-glow)}
+.benefit-number{position:absolute;top:20px;left:30px;font-size:3.8rem;font-weight:900;color:var(--accent-glow);line-height:1;opacity:.4;font-family:'Amiri',serif}
+.benefit-card h3{font-size:1.35rem;font-weight:900;color:var(--text-primary);margin-bottom:14px;position:relative;z-index:2;font-family:'Amiri',serif}
+.benefit-card p{color:var(--text-secondary);font-size:.98rem;line-height:1.85}
+.benefit-card strong{color:var(--gold-300)}
+[data-theme="light"] .benefit-card strong{color:var(--gold-700)}
+
+/* Quiz */
+#quiz{background:var(--bg-primary)}
+.quiz-box{max-width:780px;margin:0 auto;background:var(--bg-card);border:1.5px solid var(--border-color);border-radius:28px;padding:48px 42px;backdrop-filter:blur(12px);position:relative;z-index:2;box-shadow:0 20px 50px rgba(0,0,0,0.3)}
+.quiz-box h3{text-align:center;font-size:1.5rem;font-weight:800;color:var(--gold-300);margin-bottom:30px;font-family:'Amiri',serif}
+[data-theme="light"] .quiz-box h3{color:var(--gold-700)}
+.quiz-list{display:flex;flex-direction:column;gap:22px}
+.quiz-item{border:1.5px solid var(--border-color);border-radius:18px;overflow:hidden;transition:border-color 0.3s;background:rgba(0,0,0,0.15)}
+[data-theme="light"] .quiz-item{background:rgba(255,255,255,0.7)}
+.quiz-question{width:100%;text-align:right;padding:20px 24px;background:none;border:none;color:var(--text-primary);font-family:inherit;font-size:1.02rem;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px}
+[dir="ltr"] .quiz-question{text-align:left}
+.quiz-question:hover{background:var(--accent-glow)}
+.q-arrow{font-size:.85rem;transition:transform 0.35s;color:var(--gold-400)}
+.quiz-item.open .q-arrow{transform:rotate(180deg)}
+.quiz-answer{max-height:0;overflow:hidden;transition:max-height 0.4s var(--ease-smooth),padding 0.4s;padding:0 24px;color:var(--text-secondary);font-size:.96rem;line-height:1.9}
+.quiz-item.open .quiz-answer{max-height:300px;padding:0 24px 22px}
+.quiz-answer strong{color:var(--gold-300)}
+[data-theme="light"] .quiz-answer strong{color:var(--gold-700)}
+
+/* Proverb */
+#proverb{background:var(--bg-secondary);position:relative;overflow:hidden}
+.proverb-box{text-align:center;position:relative;padding:65px 45px;background:var(--bg-card);border:2px dashed var(--border-hover);border-radius:32px;overflow:hidden;max-width:920px;margin:0 auto;backdrop-filter:blur(10px);z-index:2;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+.proverb-box::before,.proverb-box::after{content:'"';position:absolute;font-size:12rem;color:var(--accent-glow);line-height:1;font-family:'Amiri',serif}
+.proverb-box::before{top:-25px;right:35px}
+.proverb-box::after{bottom:-85px;left:35px;transform:rotate(180deg)}
+.proverb-text{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:900;background:linear-gradient(135deg,var(--gold-200),var(--gold-400));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;position:relative;z-index:2;line-height:1.5;font-family:'Amiri',serif}
+.proverb-note{margin-top:20px;color:var(--text-secondary);font-size:1rem;position:relative;z-index:2}
+
+/* Credits */
+#credits{background:linear-gradient(135deg,var(--olive-900),var(--olive-800),var(--olive-900));position:relative;overflow:hidden;padding:100px 5%}
+[data-theme="light"] #credits{background:linear-gradient(135deg,#eee9d5,#e3dbbe,#eee9d5)}
+.credits-wrapper{max-width:1150px;margin:0 auto;position:relative;z-index:2}
+.credits-title{text-align:center;font-size:clamp(1.8rem,3.2vw,2.4rem);font-weight:900;color:var(--gold-300);margin-bottom:16px;font-family:'Amiri',serif}
+[data-theme="light"] .credits-title{color:var(--gold-700)}
+.credits-subtitle{text-align:center;color:var(--text-secondary);font-size:1.05rem;margin-bottom:60px}
+.credits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.credit-card{background:var(--bg-card);border:1.5px solid var(--border-color);border-radius:24px;padding:42px 28px;text-align:center;transition:all 0.4s var(--ease-smooth);backdrop-filter:blur(10px)}
+.credit-card:hover{transform:translateY(-10px);border-color:var(--border-hover);box-shadow:0 25px 60px rgba(0,0,0,0.4),0 0 50px var(--accent-glow)}
+.credit-icon{width:75px;height:75px;margin:0 auto 22px;background:linear-gradient(135deg,var(--gold-500),var(--gold-700));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.9rem;box-shadow:0 12px 35px var(--accent-glow);transition:transform 0.5s var(--ease-bounce)}
+.credit-card:hover .credit-icon{transform:scale(1.12) rotate(-8deg)}
+.credit-role{display:inline-block;padding:5px 16px;background:var(--accent-glow);color:var(--gold-300);border:1px solid var(--border-hover);border-radius:20px;font-size:.78rem;font-weight:700;margin-bottom:14px}
+[data-theme="light"] .credit-role{color:var(--gold-700)}
+.credit-name{font-size:1.4rem;font-weight:900;color:var(--text-primary);margin-bottom:8px;line-height:1.3;font-family:'Amiri',serif}
+.credit-desc{color:var(--text-secondary);font-size:.95rem;line-height:1.8}
+
+/* Footer */
+footer{background:var(--olive-950);padding:60px 5% 35px;border-top:1px solid var(--border-color)}
+[data-theme="light"] footer{background:var(--olive-900)}
+.footer-content{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:45px;margin-bottom:45px}
+.footer-brand h3{font-size:1.6rem;font-weight:900;color:var(--gold-300);margin-bottom:14px;font-family:'Amiri',serif}
+.footer-brand p{color:rgba(252,250,242,0.68);font-size:.95rem;line-height:1.8;max-width:440px}
+.footer-brand .footer-credits{margin-top:18px;padding-top:18px;border-top:1px solid rgba(222,184,62,0.18);color:var(--gold-300);font-size:.9rem;line-height:1.9}
+.footer-brand .footer-credits strong{color:var(--gold-200)}
+.footer-col h4{color:#fcfaf2;font-size:1.05rem;font-weight:800;margin-bottom:16px;font-family:'Amiri',serif}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.footer-col a{color:rgba(252,250,242,0.68);text-decoration:none;font-size:.92rem;transition:color 0.25s}
+.footer-col a:hover{color:var(--gold-300)}
+.footer-bottom{max-width:1300px;margin:0 auto;padding-top:30px;border-top:1px solid rgba(222,184,62,0.18);text-align:center;color:rgba(252,250,242,0.6);font-size:.88rem;line-height:1.8}
+.footer-bottom .heart{color:var(--gold-400);display:inline-block;animation:heartBeat 1.5s ease infinite}
+@keyframes heartBeat{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+
+/* Top btn */
+.top-btn{position:fixed;bottom:30px;left:30px;width:52px;height:52px;background:linear-gradient(135deg,var(--gold-500),var(--gold-700));color:var(--olive-950);border:none;border-radius:50%;font-size:1.4rem;box-shadow:0 10px 30px var(--accent-glow);opacity:0;visibility:hidden;transform:translateY(25px) scale(0.5);transition:all 0.4s var(--ease-bounce);z-index:999;display:flex;align-items:center;justify-content:center}
+.top-btn.show{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
+.top-btn:hover{transform:translateY(-6px) scale(1.08)}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(45px);transition:opacity 0.85s var(--ease-smooth),transform 0.85s var(--ease-smooth)}
+.reveal.active{opacity:1;transform:translateY(0)}
+
+/* Lang */
+[data-lang="ar"] .en-only{display:none!important}
+[data-lang="en"] .ar-only{display:none!important}
+
+/* Responsive */
+@media (max-width:1024px){
+  .about-layout,.press-layout{grid-template-columns:1fr;gap:45px}
+  .footer-content{grid-template-columns:1fr 1fr}
+}
+@media (max-width:768px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  .footer-content{grid-template-columns:1fr;gap:35px}
+  section{padding:80px 5%}
+  .hero h1{font-size:2rem}
+  .hero{padding:100px 5% 50px}
+  .students-card{padding:14px 24px}
+  .students-card .students-names{font-size:1.05rem}
+  .stats-container{grid-template-columns:repeat(2,1fr)}
+  .stat-item:nth-child(2)::after{display:none}
+  .top-btn{bottom:20px;left:20px;width:46px;height:46px}
+  .credits-grid{grid-template-columns:1fr}
+  .quiz-box{padding:32px 24px}
+}
+@media (max-width:480px){
+  .stats-container{grid-template-columns:1fr}
+  .stat-item::after{display:none}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .btn{justify-content:center}
+}
+</style>
+</head>
+<body data-theme="dark" data-lang="ar">
+
+<!-- رابط التخطي للوصول السريع -->
+<a href="#main" class="skip-link ar-only">تخطي إلى المحتوى</a>
+<a href="#main" class="skip-link en-only">Skip to content</a>
+
+<!-- رابط التخطي للتنقل -->
+<a href="#videos" class="skip-link ar-only" style="left:auto;right:200px;">تخطي إلى التنقل</a>
+
+<div class="cursor-core" aria-hidden="true"></div>
+
+<div id="preloader" role="status" aria-live="polite">
+  <div class="preloader-olive" aria-hidden="true">🫒</div>
+  <div class="preloader-title ar-only">يوم الزيتون الأردني</div>
+  <div class="preloader-title en-only">Jordanian Olive Day</div>
+  <div class="preloader-students ar-only">
+    ابتكار وإعداد الطالبتين <strong>هاجر وسارة حمدان</strong>
+  </div>
+  <div class="preloader-students en-only">
+    Created by students <strong>Hajar & Sara Hamdan</strong>
+  </div>
+  <div class="preloader-supervisor ar-only">
+    بإشراف المعلمة <strong>جنان عبد الله موسى</strong>
+  </div>
+  <div class="preloader-supervisor en-only">
+    Supervised by teacher <strong>Jinan Abdullah Musa</strong>
+  </div>
+  <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+</div>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<div class="top-controls">
+  <button class="control-btn" id="themeToggle" aria-label="تبديل الثيم" title="تبديل الثيم">🌙</button>
+  <button class="control-btn lang-btn" id="langToggle" aria-label="تبديل اللغة" title="تبديل اللغة">EN</button>
+</div>
+
+<nav id="navbar" aria-label="القائمة الرئيسية">
+  <div class="nav-container">
+    <a href="#main" class="logo" aria-label="العودة إلى الرئيسية">
+      <div class="logo-mark" aria-hidden="true">🫒</div>
+      <div class="logo-text">
+        <span class="logo-main ar-only">يوم الزيتون الأردني</span>
+        <span class="logo-main en-only">Jordanian Olive Day</span>
+        <span class="logo-sub ar-only">هاجر وساره حمدان</span>
+        <span class="logo-sub en-only">Hajar & Sara Hamdan</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#videos" class="ar-only">الفيديوهات</a><a href="#videos" class="en-only">Videos</a></li>
+      <li><a href="#about" class="ar-only">حكاية الزيتون</a><a href="#about" class="en-only">About</a></li>
+      <li><a href="#traditions" class="ar-only">عاداتنا</a><a href="#traditions" class="en-only">Traditions</a></li>
+      <li><a href="#pressing" class="ar-only">معصرة الخير</a><a href="#pressing" class="en-only">Pressing</a></li>
+      <li><a href="#activities" class="ar-only">الفعاليات</a><a href="#activities" class="en-only">Activities</a></li>
+      <li><a href="#benefits" class="ar-only">الفوائد</a><a href="#benefits" class="en-only">Benefits</a></li>
+      <li><a href="#quiz" class="ar-only">اختبر معلوماتك</a><a href="#quiz" class="en-only">Quiz</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="hero" id="main">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-particles" id="particles" aria-hidden="true"></div>
+  <div class="hero-content">
+
+    <div class="students-card">
+      <span class="students-label ar-only">عمل الطالبتين</span>
+      <span class="students-label en-only">Created by Students</span>
+      <span class="students-names ar-only">هاجر وساره حمدان</span>
+      <span class="students-names en-only">Hajar & Sara Hamdan</span>
+      <span class="supervisor-line ar-only">بإشراف المعلمة <strong>جنان عبد الله موسى</strong></span>
+      <span class="supervisor-line en-only">Supervised by <strong>Jinan Abdullah Musa</strong></span>
+    </div>
+
+    <div class="hero-eyebrow">
+      <span class="ar-only">🫒 من تراث الأردن العريق إلى شجرة الخير المباركة</span>
+      <span class="en-only">🫒 From Jordan's rich heritage to the blessed olive tree</span>
+    </div>
+
+    <h1>
+      <span class="ar-only">موسم <span class="gradient-text">الزيتون</span> الأردني<br>حكاية أرضٍ وعطاء لا ينضب</span>
+      <span class="en-only">Jordanian <span class="gradient-text">Olive</span> Season<br>A Story of Land and Endless Giving</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      <span class="ar-only">نحتفل معاً بشجرة الزيتون المباركة وذهب الأردن الأخضر — من قطاف الجبال إلى معاصر الخير</span>
+      <span class="en-only">Celebrating the blessed tree and Jordan's green gold — from mountain harvest to mills</span>
+    </p>
+
+    <div class="hero-actions">
+      <a href="#videos" class="btn btn-primary">
+        <span class="ar-only">شاهد الفيديوهات التوثيقية</span>
+        <span class="en-only">Watch Videos</span>
+        <span aria-hidden="true">🎥</span>
+      </a>
+      <a href="#about" class="btn btn-ghost">
+        <span class="ar-only">تعرف على الحكاية</span>
+        <span class="en-only">Explore Story</span>
+        <span aria-hidden="true">←</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="stats-strip" role="region" aria-label="إحصائيات">
+  <div class="stats-container">
+    <div class="stat-item reveal">
+      <span class="stat-number" data-count="5400" aria-label="5400 سنة قبل الميلاد">0</span>
+      <span class="stat-label ar-only">سنة قبل الميلاد (أقدم شجرة)</span>
+      <span class="stat-label en-only">Years BC (Oldest Tree)</span>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-number" data-count="100" aria-label="100 مليون شجرة">0</span>
+      <span class="stat-label ar-only">مليون شجرة زيتون مباركة</span>
+      <span class="stat-label en-only">Million Olive Trees</span>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-number" data-count="6" aria-label="6 أصناف">0</span>
+      <span class="stat-label ar-only">أصناف أردنية أصيلة</span>
+      <span class="stat-label en-only">Authentic Varieties</span>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-number" data-count="35" aria-label="35 بالمئة">0</span>
+      <span class="stat-label ar-only">% أعلى نسبة استخلاص للزيت</span>
+      <span class="stat-label en-only">% Highest Oil Yield</span>
+    </div>
+  </div>
+</div>
+
+<!-- قسم الفيديوهات الأساسية -->
+<section id="videos" aria-labelledby="videos-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">
+        <span class="ar-only">توثيق مرئي</span>
+        <span class="en-only">Video Documentation</span>
+      </div>
+      <h2 class="section-title" id="videos-title">
+        <span class="ar-only">مشاهد حية من <span class="accent">موسم قطاف وعصر الزيتون</span></span>
+        <span class="en-only">Live Scenes from <span class="accent">Olive Season</span></span>
+      </h2>
+      <p class="section-desc">
+        <span class="ar-only">شاهد الفيديوهات التوثيقية الأصيلة التي تجسد فرحة القطاف وعراقة التراث الأردني</span>
+        <span class="en-only">Watch authentic documentary videos embodying the joy of harvest and Jordanian heritage</span>
+      </p>
+    </div>
+
+    <div class="videos-grid">
+      <div class="video-card reveal">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/TxlFccYk-Zk" title="طريقة عصر الزيتون حديثاً" allowfullscreen aria-label="فيديو توثيقي لطريقة عصر الزيتون حديثاً"></iframe>
+        </div>
+        <div class="video-info">
+          <h3 class="ar-only">⚙️ طريقة عصر الزيتون حديثاً</h3>
+          <h3 class="en-only">⚙️ Modern Olive Pressing Method</h3>
+          <p class="ar-only">شاهد مراحل العصر الحديثة باستخدام أحدث المعدات والتقنيات لاستخراج زيت الزيتون النقي.</p>
+          <p class="en-only">Watch modern pressing stages using the latest equipment and techniques to extract pure olive oil.</p>
+        </div>
+      </div>
+
+      <div class="video-card reveal">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/U-myTN4tJdU" title="طريقة عصر الزيتون قديماً" allowfullscreen aria-label="فيديو توثيقي لطريقة عصر الزيتون قديماً"></iframe>
+        </div>
+        <div class="video-info">
+          <h3 class="ar-only">🏺 طريقة عصر الزيتون قديماً</h3>
+          <h3 class="en-only">🏺 Traditional Olive Pressing Method</h3>
+          <p class="ar-only">لقطات تراثية توثق الطرق التقليدية القديمة في عصر الزيتون التي توارثتها الأجيال.</p>
+          <p class="en-only">Heritage footage documenting traditional old methods of olive pressing passed down through generations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">
+        <span class="ar-only">جذور الحكاية</span>
+        <span class="en-only">Story Roots</span>
+      </div>
+      <h2 class="section-title" id="about-title">
+        <span class="ar-only">لماذا نحتفل بـ <span class="accent">يوم الزيتون</span> في الأردن؟</span>
+        <span class="en-only">Why Celebrate <span class="accent">Olive Day</span> in Jordan?</span>
+      </h2>
+      <p class="section-desc">
+        <span class="ar-only">شجرة باركها الله في كتابه العزيز وارتبطت ارتباطاً وثيقاً بتاريخ الهوية الأردنية</span>
+        <span class="en-only">A tree blessed by God in His Holy Book, deeply tied to Jordanian identity</span>
+      </p>
+    </div>
+
+    <div class="about-layout">
+      <div class="about-text reveal">
+        <h3 class="ar-only">🌿 شجرة المعجزات والعطاء المستمر</h3>
+        <h3 class="en-only">🌿 The Tree of Miracles and Giving</h3>
+        <p class="ar-only">
+          تعتبر شجرة الزيتون في الأردن رمزاً للصمود والبركة والارتباط الوثيق بالأرض. في كل خريف، تلبس التلال الأردنية حلة زاهية من الزيتون المثقل بالخيرات، ليبدأ موسم القطاف الذي ينتظره الجميع بشوق بالغ.
+        </p>
+        <p class="ar-only">
+          هذا اليوم ليس مجرد مناسبة زراعية، بل هو احتفال مجتمعي يجمع الأجيال، حيث تتناقل العائلات مهارات العصر والقطاف، ويجتمع الأحباء على مائدة الفطور الأردنية الأصيلة التي يتوسطها زيت الزيتون والزعتر وخبز الطابون الساخن.
+        </p>
+        <p class="en-only">
+          The olive tree in Jordan is a symbol of resilience, blessing, and deep connection to the land. Every autumn, Jordanian hills wear a vibrant coat of fruitful olives, marking the much-anticipated harvest season.
+        </p>
+        <p class="en-only">
+          This day is a community celebration uniting generations, where families pass down pressing skills and gather around authentic Jordanian breakfast tables centered with olive oil and warm taboon bread.
+        </p>
+        <div class="about-quote ar-only">"شجرة الزيتون هي شاهدة على التاريخ، تطعمنا من خيرها وتبقى حارسة لتراب الوطن"</div>
+        <div class="about-quote en-only">"The olive tree is a witness to history, feeding us from its bounty and guarding our homeland"</div>
+      </div>
+
+      <div class="about-visual reveal">
+        <div class="about-circle" aria-hidden="true">
+          <span class="about-emoji">🫒</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="traditions" aria-labelledby="traditions-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">
+        <span class="ar-only">التراث والأصالة</span>
+        <span class="en-only">Heritage</span>
+      </div>
+      <h2 class="section-title" id="traditions-title">
+        <span class="ar-only">عاداتنا العريقة في <span class="accent">موسم الزيتون</span></span>
+        <span class="en-only">Our Traditions in the <span class="accent">Olive Season</span></span>
+      </h2>
+      <p class="section-desc">
+        <span class="ar-only">تقاليد نعتز بها تتوارثها الأجيال بكل حب وفخر</span>
+        <span class="en-only">Cherished traditions passed down through generations with love and pride</span>
+      </p>
+    </div>
+
+    <div class="traditions-grid">
+      <div class="tradition-card reveal">
+        <div class="tradition-inner">
+          <div class="tradition-icon" aria-hidden="true">🌅</div>
+          <h3 class="ar-only">القطاف الجماعي</h3>
+          <h3 class="en-only">Community Harvest</h3>
+          <p class="ar-only">مع خيوط الفجر الأولى، تخرج العائلات إلى الحقول، يفرشون المفارش تحت الأشجار ويرددون الأهازيج التراثية الجميلة.</p>
+          <p class="en-only">With the first rays of dawn, families head to the fields, spreading sheets and singing heritage chants.</p>
+        </div>
+      </div>
+
+      <div class="tradition-card reveal">
+        <div class="tradition-inner">
+          <div class="tradition-icon" aria-hidden="true">🫓</div>
+          <h3 class="ar-only">فطور الحقل الدافئ</h3>
+          <h3 class="en-only">Field Breakfast</h3>
+          <p class="ar-only">أطيب وجبة فطور تتكون من الزيت الطازج، والزعتر البلدي، والجبنة البيضاء، والخبز الساخن وسط الطبيعة الخلابة.</p>
+          <p class="en-only">The finest breakfast of fresh oil, local zaatar, white cheese, and hot bread amidst scenic nature.</p>
+        </div>
+      </div>
+
+      <div class="tradition-card reveal">
+        <div class="tradition-inner">
+          <div class="tradition-icon" aria-hidden="true">⚙️</div>
+          <h3 class="ar-only">رحلة المعصرة</h3>
+          <h3 class="en-only">The Mill Journey</h3>
+          <p class="ar-only">نقل المحصول إلى المعصرة وانتظار نزول أول قطرة زيت بلهفة وشغف يملأ القلوب بالسرور.</p>
+          <p class="en-only">Taking the yield to the press and eagerly waiting for the first drop of golden oil to flow.</p>
+        </div>
+      </div>
+
+      <div class="tradition-card reveal">
+        <div class="tradition-inner">
+          <div class="tradition-icon" aria-hidden="true">🌙</div>
+          <h3 class="ar-only">سهرات الموندا</h3>
+          <h3 class="en-only">Evening Gatherings</h3>
+          <p class="ar-only">تتوج سهرات المساء بتخزين مؤونة الشتاء من الزيت والزيتون وكبس الحبات السوداء بخلطات العمة والجدة.</p>
+          <p class="en-only">Evening gatherings dedicated to storing winter provisions of oil and curing olives.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pressing" aria-labelledby="pressing-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">
+        <span class="ar-only">صناعة الذهب الأخضر</span>
+        <span class="en-only">Green Gold Production</span>
+      </div>
+      <h2 class="section-title" id="pressing-title">
+        <span class="ar-only">كيف نعصر <span class="accent">الزيتون</span> بخطوات دقيقة؟</span>
+        <span class="en-only">How We <span class="accent">Press Olives</span> Precisely?</span>
+      </h2>
+      <p class="section-desc">
+        <span class="ar-only">مراحل علمية وتقنية حديثة تحافظ على أعلى جودة للزيت الصافي</span>
+        <span class="en-only">Modern scientific and technical stages maintaining top pure oil quality</span>
+      </p>
+    </div>
+
+    <div class="press-layout">
+      <div class="press-visual-wrap reveal">
+        <div class="press-visual-circle" aria-hidden="true">
+          <span class="press-emoji">🌿</span>
+        </div>
+        <div class="press-badge">
+          <span class="ar-only">✨ مراحل الإنتاج</span>
+          <span class="en-only">✨ Production Steps</span>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <ol class="steps-list">
+          <li>
+            <strong class="ar-only">الغسل والتنقية:</strong>
+            <strong class="en-only">Washing & Cleaning:</strong>
+            <span class="ar-only"> فصل الأوراق وتنظيف الثمار بالماء النقي لإزالة الأتربة والشوائب.</span>
+            <span class="en-only"> Separating leaves and washing fruit with pure water to remove impurities.</span>
+          </li>
+          <li>
+            <strong class="ar-only">الطرم والفرم:</strong>
+            <strong class="en-only">Grinding & Crushing:</strong>
+            <span class="ar-only"> طحن حبات الزيتون بالكامل (مع نواها) لتحويلها إلى عجينة متجانسة.</span>
+            <span class="en-only"> Crushing olives entirely (including pits) into a homogenous paste.</span>
+          </li>
+          <li>
+            <strong class="ar-only">الخضاض (الخلط):</strong>
+            <strong class="en-only">Malaxation (Mixing):</strong>
+            <span class="ar-only"> تقليب العجينة ببطء لتجميع قطرات الزيت الصغيرة وتسهيل فصلها لاحقاً.</span>
+            <span class="en-only"> Slowly mixing the paste to coalesce micro-oil droplets for easy extraction.</span>
+          </li>
+          <li>
+            <strong class="ar-only">فصل الزيت (الطرد المركزي):</strong>
+            <strong class="en-only">Centrifugal Separation:</strong>
+            <span class="ar-only"> استخدام جهاز الديكانتر لفصل الزيت الصافي عن الماء وبقايا العجينة (الجفت).</span>
+            <span class="en-only"> Using a decanter to separate pure oil from vegetation water and pomace.</span>
+          </li>
+          <li>
+            <strong class="ar-only">التعبئة والحفظ:</strong>
+            <strong class="en-only">Bottling & Storage:</strong>
+            <span class="ar-only"> حفظ الزيت في أوعية معتمة ومحكمة الإغلاق بعيداً عن الضوء والحرارة.</span>
+            <span class="en-only"> Storing oil in dark, sealed containers away from light and heat.</span>
+          </li>
+        </ol>
+        <div class="press-tip">
+          <span class="ar-only">💡 <strong>معلومة ذهبية:</strong> أفضل أنواع زيت الزيتون هي "العصرة الأولى على البارد" لأنها تحافظ على كافة مضادات الأكسدة والفيتامينات المفيدة.</span>
+          <span class="en-only">💡 <strong>Golden Fact:</strong> The best olive oil is "first cold pressed" as it preserves all antioxidants and vitamins.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="benefits" aria-labelledby="benefits-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">
+        <span class="ar-only">كنز الصحة والعافية</span>
+        <span class="en-only">Health Benefits</span>
+      </div>
+      <h2 class="section-title" id="benefits-title">
+        <span class="ar-only">فوائد مذهلة لـ <span class="accent">الزيتون وزيته</span></span>
+        <span class="en-only">Amazing Benefits of <span class="accent">Olives & Oil</span></span>
+      </h2>
+      <p class="section-desc">
+        <span class="ar-only">صيدلية طبيعية متكاملة لصحة الإنسان وسلامة جسده</span>
+        <span class="en-only">A complete natural pharmacy for human health and well-being</span>
+      </p>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit-card reveal">
+        <span class="benefit-number" aria-hidden="true">01</span>
+        <h3 class="ar-only">صحة القلب والشرايين</h3>
+        <h3 class="en-only">Heart & Vascular Health</h3>
+        <p class="ar-only">يحتوي على دهون أحادية غير مشبعة تحافظ على صحة القلب وتخفض نسبة الكولسترول الضار.</p>
+        <p class="en-only">Contains monounsaturated fats that protect heart health and lower bad cholesterol.</p>
+      </div>
+
+      <div class="benefit-card reveal">
+        <span class="benefit-number" aria-hidden="true">02</span>
+        <h3 class="ar-only">مضادات الأكسدة القوية</h3>
+        <h3 class="en-only">Powerful Antioxidants</h3>
+        <p class="ar-only">غني بمادة الأوليوكانتال والمركبات الفينولية التي تحارب الالتهابات وتحمي خلايا الجسم.</p>
+        <p class="en-only">Rich in oleocanthal and phenolic compounds that fight inflammation and protect cells.</p>
+      </div>
+
+      <div class="benefit-card reveal">
+        <span class="benefit-number" aria-hidden="true">03</span>
+        <h3 class="ar-only">العناية بالبشرة والشعر</h3>
+        <h3 class="en-only">Skin & Hair Care</h3>
+        <p class="ar-only">يرطب البشرة بعمق ويحارب علامات الشيخوخة، ويستخدم في الوصفات الطبيعية لتغذية الشعر.</p>
+        <p class="en-only">Deeply moisturizes skin, fights aging, and is used in natural hair nourishment recipes.</p>
+      </div>
+
+      <div class="benefit-card reveal">
+        <span class="benefit-number" aria-hidden="true">04</span>
+        <h3 class="ar-only">قيمة غذائية عالية</h3>
+        <h3 class="en-only">High Nutritional Value</h3>
+        <p class="ar-only">مصدر ممتاز للفيتامينات الأساسية والمعادن الضرورية لتعزيز المناعة وطاقة الجسم اليومية.</p>
+        <p class="en-only">An excellent source of essential vitamins and minerals boosting immunity and energy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quiz" aria-labelledby="quiz-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">
+        <span class="ar-only">تفاعل ومرح</span>
+        <span class="en-only">Interactive Quiz</span>
+      </div>
+      <h2 class="section-title" id="quiz-title">
+        <span class="ar-only">اختبر معلوماتك عن <span class="accent">الزيتون الأردني</span></span>
+        <span class="en-only">Test Your Knowledge About <span class="accent">Jordanian Olives</span></span>
+      </h2>
+      <p class="section-desc">
+        <span class="ar-only">اضغط على أي سؤال لاكتشاف الإجابة الصحيحة</span>
+        <span class="en-only">Click on any question to discover the correct answer</span>
+      </p>
+    </div>
+
+    <div class="quiz-box reveal">
+      <h3 class="ar-only">🫒 أسئلة تراثية وزراعية سريعة</h3>
+      <h3 class="en-only">🫒 Quick Heritage & Agricultural Questions</h3>
+      <div class="quiz-list">
+        <div class="quiz-item">
+          <button class="quiz-question" aria-expanded="false">
+            <span class="ar-only">متى تبدأ عادةً فتح معاصر الزيتون رسمياً في الأردن؟</span>
+            <span class="en-only">When do olive presses officially open in Jordan?</span>
+            <span class="q-arrow" aria-hidden="true">▼</span>
+          </button>
+          <div class="quiz-answer">
+            <p class="ar-only">تبدأ عادة مع منتصف شهر <strong>تشرين الأول (أكتوبر)</strong> من كل عام لضمان نضج الثمار واستخلاص أفضل زيت.</p>
+            <p class="en-only">They usually open in mid-<strong>October</strong> each year to ensure optimal ripeness and oil yield.</p>
+          </div>
+        </div>
+
+        <div class="quiz-item">
+          <button class="quiz-question" aria-expanded="false">
+            <span class="ar-only">ما هي أشهر أصناف الزيتون المنتشرة في الأردن؟</span>
+            <span class="en-only">What are the most famous olive varieties in Jordan?</span>
+            <span class="q-arrow" aria-hidden="true">▼</span>
+          </button>
+          <div class="quiz-answer">
+            <p class="ar-only">من أبرزها: <strong>النبالي</strong> (البلدي)، <strong>الصوري</strong>، <strong>النصوصي</strong>، و<strong>الراسعي</strong>.</p>
+            <p class="en-only">Most notably: <strong>Nabali</strong>, <strong>Souri</strong>, <strong>Nassouhi</strong>, and <strong>Rasei</strong>.</p>
+          </div>
+        </div>
+
+        <div class="quiz-item">
+          <button class="quiz-question" aria-expanded="false">
+            <span class="ar-only">أين تقع أقدم شجرة زيتون معروفة في الأردن؟</span>
+            <span class="en-only">Where is the oldest known olive tree in Jordan located?</span>
+            <span class="q-arrow" aria-hidden="true">▼</span>
+          </button>
+          <div class="quiz-answer">
+            <p class="ar-only">تقع في منطقة <strong>هضيب الريح بوادي رم</strong>، ويعود عمرها التقديري لآلاف السنين.</p>
+            <p class="en-only">Located in <strong>Hadib Al-Reeh in Wadi Rum</strong>, dating back thousands of years.</p>
+          </div>
+        </div>
+
+        <div class="quiz-item">
+          <button class="quiz-question" aria-expanded="false">
+            <span class="ar-only">ماذا يطلق على بقايا حبات الزيتون بعد العصر والاستخلاص؟</span>
+            <span class="en-only">What are the leftover olive remnants called after pressing?</span>
+            <span class="q-arrow" aria-hidden="true">▼</span>
+          </button>
+          <div class="quiz-answer">
+            <p class="ar-only">يطلق عليها اسم <strong>الجفت</strong>، وغالباً ما تستخدم في التدفئة أو كسماد عضوي طبيعي.</p>
+            <p class="en-only">Called <strong>Pomace (Jaft)</strong>, often used for heating or as natural organic fertilizer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proverb" aria-labelledby="proverb-title">
+  <div class="container">
+    <div class="proverb-box reveal">
+      <div class="proverb-text ar-only" id="proverb-title">"الزيت وتد البيت"</div>
+      <div class="proverb-text en-only">"Oil is the Pillar of the Home"</div>
+      <div class="proverb-note ar-only">مثل شعبي أردني عريق يعبر عن الأهمية المعيشية والغذائية الكبرى لزيت الزيتون</div>
+      <div class="proverb-note en-only">A deep Jordanian folk proverb expressing the immense living and nutritional importance of olive oil</div>
+    </div>
+  </div>
+</section>
+
+<section id="credits" aria-labelledby="credits-title">
+  <div class="credits-wrapper">
+    <h2 class="credits-title reveal" id="credits-title">
+      <span class="ar-only">✨ ابتكار وإعداد المشروع</span>
+      <span class="en-only">✨ Project Creation & Design</span>
+    </h2>
+    <p class="credits-subtitle reveal">
+      <span class="ar-only">عمل تفتخر به الطالبتان في توثيق التراث الأردني الأصيل</span>
+      <span class="en-only">Proudly created by the students to document authentic Jordanian heritage</span>
+    </p>
+
+    <div class="credits-grid">
+      <div class="credit-card reveal">
+        <div class="credit-icon" aria-hidden="true">👩‍🎓</div>
+        <span class="credit-role ar-only">إعداد وابتكار</span>
+        <span class="credit-role en-only">Creation & Design</span>
+        <h3 class="credit-name ar-only">هاجر حمدان</h3>
+        <h3 class="credit-name en-only">Hajar Hamdan</h3>
+        <p class="credit-desc ar-only">تصميم المحتوى والواجهات التفاعلية</p>
+        <p class="credit-desc en-only">Content design & interactive UI</p>
+      </div>
+
+      <div class="credit-card reveal">
+        <div class="credit-icon" aria-hidden="true">👩‍🎓</div>
+        <span class="credit-role ar-only">إعداد وابتكار</span>
+        <span class="credit-role en-only">Creation & Design</span>
+        <h3 class="credit-name ar-only">ساره حمدان</h3>
+        <h3 class="credit-name en-only">Sara Hamdan</h3>
+        <p class="credit-desc ar-only">تطوير الأفكار وتوثيق التراث</p>
+        <p class="credit-desc en-only">Idea development & heritage documentation</p>
+      </div>
+
+      <div class="credit-card reveal">
+        <div class="credit-icon" aria-hidden="true">👩‍🏫</div>
+        <span class="credit-role ar-only">إشراف تربوي</span>
+        <span class="credit-role en-only">Educational Supervision</span>
+        <h3 class="credit-name ar-only">جنان عبد الله موسى</h3>
+        <h3 class="credit-name en-only">Jinan Abdullah Musa</h3>
+        <p class="credit-desc ar-only">الإشراف على المشروع وتوجيهه</p>
+        <p class="credit-desc en-only">Project supervision & guidance</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <h3 class="ar-only">🫒 موسم الزيتون الأردني</h3>
+      <h3 class="en-only">🫒 Jordanian Olive Season</h3>
+      <p class="ar-only">موقع تراثي وتعليمي تفاعلي يحتفي بأصالة الزيتون الأردني وشجرة الخير المباركة — ابتكار الطالبتين هاجر وسارة حمدان بإشراف المعلمة جنان عبد الله موسى.</p>
+      <p class="en-only">An interactive heritage and educational website celebrating Jordanian olives — created by students Hajar & Sara Hamdan, supervised by teacher Jinan Abdullah Musa.</p>
+      <div class="footer-credits">
+        <span class="ar-only">
+          <strong>إعداد الطالبتين:</strong> هاجر وساره حمدان<br>
+          <strong>بإشراف المعلمة:</strong> جنان عبد الله موسى
+        </span>
+        <span class="en-only">
+          <strong>Students:</strong> Hajar & Sara Hamdan<br>
+          <strong>Supervised by:</strong> Jinan Abdullah Musa
+        </span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4 class="ar-only">الأقسام الرئيسية</h4>
+      <h4 class="en-only">Main Sections</h4>
+      <ul>
+        <li><a href="#videos" class="ar-only">الفيديوهات</a><a href="#videos" class="en-only">Videos</a></li>
+        <li><a href="#about" class="ar-only">حكاية الزيتون</a><a href="#about" class="en-only">About</a></li>
+        <li><a href="#traditions" class="ar-only">عاداتنا</a><a href="#traditions" class="en-only">Traditions</a></li>
+        <li><a href="#pressing" class="ar-only">معصرة الخير</a><a href="#pressing" class="en-only">Pressing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="ar-only">روابط سريعة</h4>
+      <h4 class="en-only">Quick Links</h4>
+      <ul>
+        <li><a href="#main" class="ar-only">الرئيسية</a><a href="#main" class="en-only">Home</a></li>
+        <li><a href="#activities" class="ar-only">الفعاليات</a><a href="#activities" class="en-only">Activities</a></li>
+        <li><a href="#benefits" class="ar-only">الفوائد</a><a href="#benefits" class="en-only">Benefits</a></li>
+        <li><a href="#quiz" class="ar-only">اختبر معلوماتك</a><a href="#quiz" class="en-only">Quiz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="ar-only">صُنع بكل حب وفخر للتراث الأردني — ابتكار الطالبتين هاجر وسارة حمدان بإشراف المعلمة جنان عبد الله موسى © 2026</span>
+    <span class="en-only">Made with love and pride for Jordanian heritage — Created by students Hajar & Sara Hamdan, supervised by teacher Jinan Abdullah Musa © 2026</span>
+  </div>
+</footer>
+
+<button class="top-btn" id="topBtn" aria-label="العودة للأعلى">↑</button>
+
+<script>
+const State={
+  theme:localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'),
+  lang:localStorage.getItem('lang')||'ar',
+  apply(){
+    document.body.dataset.theme=this.theme;
+    document.body.dataset.lang=this.lang;
+    document.documentElement.lang=this.lang;
+    document.documentElement.dir=this.lang==='ar'?'rtl':'ltr';
+    document.getElementById('themeToggle').textContent=this.theme==='dark'?'☀️':'🌙';
+    document.getElementById('langToggle').textContent=this.lang==='ar'?'EN':'ع';
+  },
+  save(){localStorage.setItem('theme',this.theme);localStorage.setItem('lang',this.lang);}
+};
+
+document.getElementById('themeToggle').addEventListener('click',()=>{
+  State.theme=State.theme==='dark'?'light':'dark';
+  State.apply();State.save();
+});
+document.getElementById('langToggle').addEventListener('click',()=>{
+  State.lang=State.lang==='ar'?'en':'ar';
+  State.apply();State.save();
+});
+State.apply();
+
+const cursorCore=document.querySelector('.cursor-core');
+const isTouchDevice=matchMedia('(pointer: coarse)').matches;
+const prefersReducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if(!isTouchDevice&&cursorCore&&!prefersReducedMotion){
+  let mx=innerWidth/2,my=innerHeight/2,cx=mx,cy=my;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+  (function loop(){
+    cx+=(mx-cx)*0.9;cy+=(my-cy)*0.9;
+    cursorCore.style.transform=`translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
+    requestAnimationFrame(loop);
+  })();
+  document.addEventListener('mouseleave',()=>cursorCore.style.opacity='0');
+  document.addEventListener('mouseenter',()=>cursorCore.style.opacity='1');
+  const hoverSel='a, button, .tradition-card, .activity-card, .benefit-card, .credit-card, .control-btn, .quiz-question, .video-card';
+  document.querySelectorAll(hoverSel).forEach(el=>{
+    el.addEventListener('mouseenter',()=>cursorCore.classList.add('hovering'));
+    el.addEventListener('mouseleave',()=>cursorCore.classList.remove('hovering'));
+  });
+  document.addEventListener('mousedown',()=>cursorCore.classList.add('clicking'));
+  document.addEventListener('mouseup',()=>cursorCore.classList.remove('clicking'));
+} else if(cursorCore){
+  cursorCore.style.display='none';
+}
+
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    document.getElementById('preloader').classList.add('hidden');
+    document.body.style.overflow='auto';
+  },1300);
+});
+document.body.style.overflow='hidden';
+
+const particlesContainer=document.getElementById('particles');
+if(!prefersReducedMotion){
+  const particleCount=window.innerWidth<768?6:14;
+  for(let i=0;i<particleCount;i++){
+    const p=document.createElement('div');
+    p.className='particle';
+    p.style.left=Math.random()*100+'%';
+    p.style.animationDuration=(Math.random()*12+12)+'s';
+    p.style.animationDelay=Math.random()*12+'s';
+    const s=Math.random()*3+3;
+    p.style.width=p.style.height=s+'px';
+    particlesContainer.appendChild(p);
+  }
+}
+
+const navbar=document.getElementById('navbar');
+const topBtn=document.getElementById('topBtn');
+const scrollProgress=document.querySelector('.scroll-progress');
+let ticking=false;
+window.addEventListener('scroll',()=>{
+  if(!ticking){
+    requestAnimationFrame(()=>{
+      const st=window.pageYOffset;
+      const dh=document.documentElement.scrollHeight-window.innerHeight;
+      scrollProgress.style.width=(st/dh*100)+'%';
+      navbar.classList.toggle('scrolled',st>80);
+      topBtn.classList.toggle('show',st>500);
+      ticking=false;
+    });
+    ticking=true;
+  }
+});
+topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+const revealObserver=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('active');revealObserver.unobserve(e.target);}
+  });
+},{threshold:0.1,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+
+const counterObserver=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const el=e.target;
+      const target=parseInt(el.dataset.count);
+      const duration=1800;
+      const start=performance.now();
+      (function update(now){
+        const p=Math.min((now-start)/duration,1);
+        const eased=1-Math.pow(1-p,3);
+        const curr=Math.floor(target*eased);
+        el.textContent=target>=1000?curr.toLocaleString('en-US'):curr;
+        if(p<1)requestAnimationFrame(update);
+        else el.textContent=target.toLocaleString('en-US');
+      })(start);
+      counterObserver.unobserve(el);
+    }
+  });
+},{threshold:0.5});
+document.querySelectorAll('[data-count]').forEach(el=>counterObserver.observe(el));
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    const t=document.querySelector(this.getAttribute('href'));
+    if(t){
+      const top=t.getBoundingClientRect().top+window.pageYOffset-78;
+      window.scrollTo({top,behavior:'smooth'});
+    }
+  });
+});
+
+const burger=document.getElementById('burger');
+const navLinks=document.querySelector('.nav-links');
+burger.addEventListener('click',()=>{
+  const open=navLinks.style.display==='flex';
+  navLinks.style.display=open?'':'flex';
+  navLinks.style.position='absolute';
+  navLinks.style.top='78px';
+  navLinks.style.right='0';
+  navLinks.style.left='0';
+  navLinks.style.flexDirection='column';
+  navLinks.style.background='var(--bg-card)';
+  navLinks.style.backdropFilter='blur(14px)';
+  navLinks.style.padding='20px';
+  navLinks.style.borderBottom='1px solid var(--border-color)';
+  burger.setAttribute('aria-expanded',!open);
+});
+
+document.querySelectorAll('.quiz-question').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.closest('.quiz-item');
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.quiz-item').forEach(i=>{
+      i.classList.remove('open');
+      i.querySelector('.quiz-question').setAttribute('aria-expanded','false');
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      q.setAttribute('aria-expanded','true');
+    }
+  });
+});
+
+/* دعم لوحة المفاتيح */
+document.addEventListener('keydown',(e)=>{
+  if(e.key==='Escape'){
+    document.querySelectorAll('.quiz-item.open').forEach(i=>{
+      i.classList.remove('open');
+      i.querySelector('.quiz-question').setAttribute('aria-expanded','false');
+    });
+  }
+});
+</script>
+</body>
+</html>
